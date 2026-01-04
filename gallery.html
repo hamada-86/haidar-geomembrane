@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض أعمالنا - APO HAIDAR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #00bcd4;
+            --secondary-color: #FFD700;
+            --bg-color: #05050a;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-color);
+            color: #fff;
+            margin: 0;
+            padding-top: 100px;
+        }
+
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            z-index: 1000;
+        }
+
+        .nav-bar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px var(--primary-color);
+            margin-bottom: 40px;
+        }
+
+        /* شبكة الصور */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border: 2px solid #333;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 250px;
+            transition: 0.4s;
+        }
+
+        .gallery-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 20px var(--primary-color);
+            transform: scale(1.03);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .img-caption {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 188, 212, 0.8);
+            color: #000;
+            padding: 10px 0;
+            font-weight: bold;
+            transform: translateY(100%);
+            transition: 0.3s;
+        }
+
+        .gallery-item:hover .img-caption {
+            transform: translateY(0);
+        }
+
+        footer {
+            padding: 40px;
+            margin-top: 50px;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <a href="index.html">الرئيسية</a>
+        <a href="services.html">خدماتنا</a>
+        <a href="gallery.html" style="color: var(--primary-color);">معرض الصور</a>
+        <a href="contact.html">اتصل بنا</a>
+    </nav>
+
+    <div class="container">
+        <h1>مشاريع تم تنفيذها بنجاح</h1>
+        <p>نستعرض لكم هنا بعض من صور مواقع العمل الحقيقية تحت إشراف APO HAIDAR</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://i.imgur.com/g8LqJc3.jpg" alt="مشروع تبطين">
+                <div class="img-caption">تبطين بحيرة زراعية - مشروع 1</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.imgur.com/G2xR2Ua.jpg" alt="لحام جيوممبرين">
+                <div class="img-caption">دقة اللحامات - ماكينة Leister</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.imgur.com/T0bS1mS.jpg" alt="حوض سمك">
+                <div class="img-caption">عزل أحواض ثروة سمكية</div>
+            </div>
+            </div>
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة لشركة APO HAIDAR &copy; 2026</p>
+    </footer>
+
+</body>
+</html>
