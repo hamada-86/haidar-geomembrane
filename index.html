@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haidar Neon | حيدر للجيوممبرين</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Orbitron:wght@500;900&display=swap');
+
+    :root {
+      --neon-blue: #00f3ff;
+      --neon-purple: #bc13fe;
+      --glass: rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: #0a0a12;
+      color: white;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* خلفية الثلوج والنيون */
+    #snow-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      z-index: -1;
+      background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+    }
+
+    /* الهيدر النيون */
+    header {
+      padding: 20px;
+      text-align: center;
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--neon-blue);
+    }
+
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 28px;
+      letter-spacing: 2px;
+      color: var(--neon-blue);
+      text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    /* النافذة العائمة (Floating Nav) */
+    .floating-nav {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.8);
+      padding: 10px 20px;
+      border-radius: 50px;
+      display: flex;
+      gap: 20px;
+      border: 1px solid var(--neon-purple);
+      box-shadow: 0 0 20px var(--neon-purple);
+      z-index: 9999;
+      backdrop-filter: blur(15px);
+    }
+
+    .nav-item {
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .nav-item:hover { color: var(--neon-blue); transform: scale(1.2); }
+
+    /* الأقسام الصفحات */
+    .page {
+      display: none;
+      padding: 30px 20px 100px;
+      animation: zoomIn 0.5s ease;
+    }
+
+    .page.active { display: block; }
+
+    .card {
+      background: var(--glass);
+      border: 1px solid rgba(0, 243, 255, 0.3);
+      padding: 20px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(5px);
+      transition: 0.4s;
+    }
+
+    .card:hover { border-color: var(--neon-purple); box-shadow: 0 0 15px var(--neon-purple); }
+
+    h2 { color: var(--neon-blue); text-shadow: 0 0 5px var(--neon-blue); }
+
+    /* أزرار التواصل النيون */
+    .btn-contact {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+      border-radius: 15px;
+      text-decoration: none;
+      color: white;
+      margin-bottom: 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-wa { background: rgba(37, 211, 102, 0.2); border: 1px solid #25d366; }
+    .btn-fb { background: rgba(24, 119, 242, 0.2); border: 1px solid #1877f2; }
+
+    .btn-contact:hover { transform: translateX(-10px); box-shadow: 0 0 20px currentColor; }
+
+  </style>
+</head>
+<body>
+
+  <canvas id="snow-canvas"></canvas>
+
+  <header>
+    <div class="logo">HAIDAR GEOMEMBRANE</div>
+  </header>
+
+  <div class="floating-nav">
+    <div class="nav-item" onclick="showPage('home')"><i class="fa-solid fa-house"></i></div>
+    <div class="nav-item" onclick="showPage('services')"><i class="fa-solid fa-microchip"></i></div>
+    <div class="nav-item" onclick="showPage('projects')"><i class="fa-solid fa-camera-retro"></i></div>
+    <div class="nav-item" onclick="showPage('contact')"><i class="fa-solid fa-address-card"></i></div>
+  </div>
+
+  <main>
+    <section id="home" class="page active">
+      <div class="card animate__animated animate__fadeIn">
+        <h2 class="animate__animated animate__flash animate__infinite animate__slow">الجيل القادم من العزل</h2>
+        <p>مرحباً بك في منصة حيدر المتطورة. نحن ندمج الخبرة الهندسية مع تكنولوجيا اللحام النووي والمزدوج لضمان حماية أصولك المائية.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fa-solid fa-shield-halved"></i> معيار GRI-GM13</h3>
+        <p>نلتزم بأعلى معايير الجودة العالمية في تبطين البحيرات والمزارع السمكية.</p>
+      </div>
+    </section>
+
+    <section id="services" class="page">
+      <h2>خدماتنا الذكية</h2>
+      <div class="card">
+        <h3><i class="fa-solid fa-bolt"></i> اللحام الحراري</h3>
+        <p>تقنيات Hot Wedge المزدوجة لاختراق جزيئي يضمن عدم الانفصال.</p>
+      </div>
+      <div class="card">
+        <h3><i class="fa-solid fa-magnifying-glass-chart"></i> الفحص الرقمي</h3>
+        <p>اختبارات ضغط الهواء والفراغ (Vacuum) لضمان تسريب 0%.</p>
+      </div>
+    </section>
+
+    <section id="projects" class="page">
+      <h2>معرض الإنجازات</h2>
+      <div class="card">
+        <p>شاهد فيديوهات التنفيذ المباشرة والنتائج النهائية لمشاريعنا العملاقة.</p>
+        <a href="https://www.facebook.com/share/16ZWcmwYSZ/" target="_blank" class="btn-contact btn-fb">
+          <i class="fa-brands fa-facebook"></i> شاهد سابقة الأعمال على فيسبوك
+        </a>
+      </div>
+    </section>
+
+    <section id="contact" class="page">
+      <h2>تواصل مع الخبير</h2>
+      <div class="card">
+        <a href="https://wa.me/201201912319" class="btn-contact btn-wa">
+          <i class="fa-brands fa-whatsapp"></i> واتساب: 01201912319
+        </a>
+        <a href="tel:01023010365" class="btn-contact" style="border: 1px solid var(--neon-blue);">
+          <i class="fa-solid fa-phone"></i> موبايل: 01023010365
+        </a>
+        <a href="https://t.me/apohaidar86" class="btn-contact" style="border: 1px solid var(--neon-purple);">
+          <i class="fa-brands fa-telegram"></i> تليجرام: @apohaidar86
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // نظام التنقل بين الصفحات
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+      window.scrollTo(0,0);
+    }
+
+    // كود تساقط الثلوج البرمجي
+    const canvas = document.getElementById('snow-canvas');
+    const ctx = canvas.getContext('2d');
+    let width, height, snowflakes = [];
+
+    function init() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+      snowflakes = [];
+      for(let i=0; i<100; i++) {
+        snowflakes.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          r: Math.random() * 3 + 1,
+          d: Math.random() * 1
+        });
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
+      ctx.beginPath();
+      for(let f of snowflakes) {
+        ctx.moveTo(f.x, f.y);
+        ctx.arc(f.x, f.y, f.r, 0, Math.PI*2, true);
+      }
+      ctx.fill();
+      update();
+    }
+
+    function update() {
+      for(let f of snowflakes) {
+        f.y += Math.pow(f.d, 2) + 1;
+        if(f.y > height) { f.y = -10; f.x = Math.random()*width; }
+      }
+    }
+
+    window.addEventListener('resize', init);
+    init();
+    setInterval(draw, 30);
+  </script>
+
+</body>
+</html>
