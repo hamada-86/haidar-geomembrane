@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدماتنا - APO HAIDAR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #00bcd4;
+            --secondary-color: #FFD700;
+            --bg-color: #0a0a12;
+            --card-bg: rgba(20, 20, 35, 0.9);
+            --glow: 0 0 15px var(--primary-color);
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-color);
+            color: #fff;
+            margin: 0;
+            padding-top: 100px;
+        }
+
+        /* القائمة العلوية */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            z-index: 1000;
+        }
+
+        .nav-bar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-bar a:hover {
+            color: var(--primary-color);
+            text-shadow: var(--glow);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--secondary-color);
+            text-shadow: 0 0 10px var(--secondary-color);
+            font-size: 2.5em;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--primary-color);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--glow);
+        }
+
+        .service-card i {
+            font-size: 3em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            line-height: 1.8;
+            font-size: 0.95em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid #333;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <a href="index.html">الرئيسية</a>
+        <a href="services.html" style="color: var(--primary-color);">خدماتنا</a>
+        <a href="gallery.html">معرض الصور</a>
+        <a href="contact.html">اتصل بنا</a>
+    </nav>
+
+    <div class="container">
+        <h1>خدمات APO HAIDAR الاحترافية</h1>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-water"></i>
+                <h3>البحيرات الصناعية</h3>
+                <p>تصميم وتنفيذ البحيرات الصناعية الكبرى بتبطين عالي الكثافة (HDPE) لضمان عدم تسرب المياه لسنوات طويلة.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-swimming-pool"></i>
+                <h3>حمامات السباحة</h3>
+                <p>عزل حمامات السباحة بأحدث التقنيات التي تتحمل ضغط المياه وتمنع الرطوبة تماماً.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-seedling"></i>
+                <h3>الأحواض الزراعية</h3>
+                <p>تبطين خزانات مياه الري والأحواض الزراعية بمواد مقاومة للشمس والظروف الجوية الصعبة.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-fish"></i>
+                <h3>أحواض الثروة السمكية</h3>
+                <p>تنفيذ أحواض المزارع السمكية بمواصفات خاصة تحافظ على نظافة المياه وصحة الأسماك.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-home"></i>
+                <h3>عزل الأسطح</h3>
+                <p>حماية المباني من مياه الأمطار والحرارة باستخدام لفائف العزل المتطورة.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-leaf"></i>
+                <h3>أرضيات وأحواض زهور</h3>
+                <p>عزل أحواض الزهور في الفلل والقصور لحماية الخرسانة من مياه الري والتآكل.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة لشركة APO HAIDAR &copy; 2026</p>
+    </footer>
+
+</body>
+</html>
